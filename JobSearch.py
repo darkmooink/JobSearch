@@ -55,8 +55,8 @@ def main():
 
         generateUtils.save_varible('settings.pkl', settings)
 
-    # searchLocation = input("Where do you want to search?")
-    searchLocation ='cromer'
+    searchLocation = input("Where do you want to search?")
+    # searchLocation ='cromer'
 
     driver = webdriver.Chrome("Drivers/chromedriver")
     wait = WebDriverWait(driver, 30)
@@ -160,7 +160,7 @@ def filter_jobs(driver):
                     Select(selection).select_by_index(1)
 
 
-                    if not settings['copy']:
+                    if settings['copy']:
                         form.find_element(By.ID, 'cc_self').send_keys(Keys.SPACE)
 
                     # form.submit()
